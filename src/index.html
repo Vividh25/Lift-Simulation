@@ -23,31 +23,45 @@
           placeholder="Number of Floors"
         />
         <button class="floor-button">Add</button>
+        <button class="floor-button" onclick="stopLift()">Stop</button>
       </div>
-      <div class="floor">
+      <div id="3" class="floor">
         <div class="control-buttons">
-          <button class="control-btn"><i class="fas fa-arrow-down"></i></button>
+          <button id="0down" class="control-btn" onclick="callLift(event)">
+            <i class="fas fa-arrow-down"></i>
+          </button>
         </div>
       </div>
 
       <div class="floor">
         <div class="control-buttons">
-          <button class="control-btn"><i class="fas fa-arrow-up"></i></button>
-          <button class="control-btn"><i class="fas fa-arrow-down"></i></button>
+          <button id="1up" class="control-btn" onclick="callLift(this.id)">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+          <button id="1down" class="control-btn" onclick="callLift(this.id)">
+            <i class="fas fa-arrow-down"></i>
+          </button>
         </div>
       </div>
       <div class="floor">
         <div class="control-buttons">
-          <button class="control-btn"><i class="fas fa-arrow-up"></i></button>
-          <button class="control-btn"><i class="fas fa-arrow-down"></i></button>
+          <button id="2up" class="control-btn" onclick="callLift(this.id)">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+          <button id="2down" class="control-btn" onclick="callLift(this.id)">
+            <i class="fas fa-arrow-down"></i>
+          </button>
         </div>
       </div>
       <div class="floor">
         <div class="control-buttons">
-          <button class="control-btn"><i class="fas fa-arrow-up"></i></button>
+          <button id="3up" class="control-btn" onclick="callLift(this.id)">
+            <i class="fas fa-arrow-up"></i>
+          </button>
         </div>
-        <div class="lift"></div>
+        <div id="elevator" class="lift"></div>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>

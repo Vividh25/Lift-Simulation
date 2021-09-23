@@ -73,4 +73,10 @@ body {
     float: left; 
     margin-left: 20px;
     border-radius: 10px;
+    animation-duration: 3s;
+}
+
+@keyframes moveLift {
+    0% {top: 0px; bottom: 0px;}
+    100% {top: 0px; bottom: 20px;}
 }
