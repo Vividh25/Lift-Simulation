@@ -1,25 +1,40 @@
 var frame;
 var pos = 0;
+const lift = document.getElementById('elevator');
+// const button0 = document.getElementById('0down');
+
+const moveLift = (floorNumber) => {
+  console.log(pos);
+  if (pos >= floorNumber) {
+    cancelAnimationFrame(frame);
+  } else {
+    pos += 10;
+    lift.style.marginBottom = pos + 'px';
+    frame = requestAnimationFrame(() => {
+      moveLift(floorNumber);
+    });
+  }
+};
 
 function callLift(e) {
   e.preventDefault();
-  console.log(Number(e.currentTarget.parentNode.parentNode.id));
-  if (pos == Number(e.currentTarget.parentNode.parentNode.id) * 240) {
-    cancelAnimationFrame(frame);
-  } else {
-    pos += 5;
-    lift.style.marginBottom = pos + 'px';
-    frame = requestAnimationFrame(function () {
-      callLift(e);
-    });
-  }
+  let floorNumber = Number(e.currentTarget.parentNode.parentNode.id) * 240;
+  moveLift(floorNumber);
 }
 
-// function stopLift() {
-//   cancelAnimationFrame(frame);
-// }
+// document.getElementById('0down').addEventListener('click', callLift);
 
-const lift = document.getElementById('elevator');
+// const stopLift = (x) => {
+//   if (x == 10) cancelAnimationFrame(frame);
+//   else {
+//     console.log(x);
+//     x++;
+//     frame = requestAnimationFrame(() => {
+//       stopLift(x);
+//     });
+//   }
+// };
+
 // const btn1Down = (document.getElementById('1down').onclick = callLift(this.id));
 // const btn1Up = document.getElementById('1up');
 // const btn2Up = document.getElementById('2up');

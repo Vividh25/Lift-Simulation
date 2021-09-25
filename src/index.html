@@ -23,7 +23,7 @@
           placeholder="Number of Floors"
         />
         <button class="floor-button">Add</button>
-        <button class="floor-button" onclick="stopLift()">Stop</button>
+        <button class="floor-button" onclick="stopLift(1)">Stop</button>
       </div>
       <div id="3" class="floor">
         <div class="control-buttons">
@@ -33,29 +33,29 @@
         </div>
       </div>
 
-      <div class="floor">
+      <div id="2" class="floor">
         <div class="control-buttons">
-          <button id="1up" class="control-btn" onclick="callLift(this.id)">
+          <button id="1up" class="control-btn" onclick="callLift(event)">
             <i class="fas fa-arrow-up"></i>
           </button>
-          <button id="1down" class="control-btn" onclick="callLift(this.id)">
+          <button id="1down" class="control-btn" onclick="callLift(event)">
             <i class="fas fa-arrow-down"></i>
           </button>
         </div>
       </div>
-      <div class="floor">
+      <div id="1" class="floor">
         <div class="control-buttons">
-          <button id="2up" class="control-btn" onclick="callLift(this.id)">
+          <button id="2up" class="control-btn" onclick="callLift(event)">
             <i class="fas fa-arrow-up"></i>
           </button>
-          <button id="2down" class="control-btn" onclick="callLift(this.id)">
+          <button id="2down" class="control-btn" onclick="callLift(event)">
             <i class="fas fa-arrow-down"></i>
           </button>
         </div>
       </div>
-      <div class="floor">
+      <div id="0" class="floor">
         <div class="control-buttons">
-          <button id="3up" class="control-btn" onclick="callLift(this.id)">
+          <button id="3up" class="control-btn" onclick="callLift(event)">
             <i class="fas fa-arrow-up"></i>
           </button>
         </div>
